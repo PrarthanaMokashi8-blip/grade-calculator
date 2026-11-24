@@ -1,0 +1,19 @@
+import pytest
+from grade_calculator import average, grade, is_pass, highest, lowest
+def test_average():
+    assert average([80, 90, 100]) == 90
+def test_average_empty_raises():
+    with pytest.raises(ValueError):
+        average([])
+def test_grade_a_plus():
+    assert grade(95) == "A+"
+def test_grade_fail():
+    assert grade(30) == "F"
+def test_is_pass_true():
+    assert is_pass([50, 60, 70]) is True
+def test_is_pass_false():
+    assert is_pass([80, 35, 90]) is False
+def test_highest():
+    assert highest([40, 90, 70]) == 90
+def test_lowest():
+    assert lowest([40, 90, 70]) == 40
