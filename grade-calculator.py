@@ -19,6 +19,10 @@ def grade(avg):
 def is_pass(marks, pass_mark=40):
     """Student passes only if every subject is >= pass_mark."""
     return all(m >= pass_mark for m in marks)
+def highest(marks):
+    return max(marks)
+def lowest(marks):
+    return min(marks)
 def main():
     name = input("Student name: ")
     n = int(input("Number of subjects: "))
@@ -26,6 +30,8 @@ def main():
     avg = average(marks)
     print(f"\nStudent : {name}")
     print(f"Average : {avg:.2f}")
+    print(f"Highest : {highest(marks)}")
+    print(f"Lowest  : {lowest(marks)}")
     print(f"Grade   : {grade(avg)}")
     print(f"Result  : {'PASS' if is_pass(marks) else 'FAIL'}")
 if __name__ == "__main__":
